@@ -16,6 +16,28 @@ class ResultActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main2)
-
+        var bundle = getIntent().getExtras();
+        if (bundle != null) {
+            textInput.text = bundle.getString("input_cost")
+            var result: Double = bundle.getString("input_cost")!!.toDouble()
+            when{
+                bundle.getBoolean("dollar") -> {
+                    textValue.setText("$")
+                    result *= 75
+                }
+                bundle.getBoolean("euro") -> {
+                    textValue.setText("$")
+                    result *= 90
+                }
+                bundle.getBoolean("pound") -> {
+                    textValue.setText("$")
+                    result *= 100
+                }
+                else -> {
+                    textValue.setText("₽")
+                }
+            }
+            textOutput.setText(result.toString())
+        }
     }
 }
