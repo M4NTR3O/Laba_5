@@ -9,6 +9,10 @@ import android.widget.RadioButton
 import android.widget.TextView
 import org.w3c.dom.Text
 
+private const val COST_TEXT = "input_cost"
+private const val DOLLAR = "dollar"
+private const val EURO = "euro"
+private const val POUND = "pound"
 class ResultActivity : AppCompatActivity() {
     private lateinit var textInput: TextView
     private lateinit var textOutput: TextView
@@ -16,28 +20,36 @@ class ResultActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main2)
-        var bundle = getIntent().getExtras();
-        if (bundle != null) {
-            textInput.text = bundle.getString("input_cost")
-            var result: Double = bundle.getString("input_cost")!!.toDouble()
-            when{
-                bundle.getBoolean("dollar") -> {
-                    textValue.setText("$")
-                    result *= 75
-                }
-                bundle.getBoolean("euro") -> {
-                    textValue.setText("$")
-                    result *= 90
-                }
-                bundle.getBoolean("pound") -> {
-                    textValue.setText("$")
-                    result *= 100
-                }
-                else -> {
-                    textValue.setText("₽")
-                }
+        textInput.text = intent.getStringExtra(COST_TEXT)
+        var result: Double = intent.getStringExtra(COST_TEXT)!!.toDouble()
+        when{
+            intent.getBooleanExtra(DOLLAR, false) -> {
+                textValue.setText("$")
+                result *= 75
             }
-            textOutput.setText(result.toString())
+            intent.getBooleanExtra(EURO, false) -> {
+                textValue.setText("€")
+                result *= 90
+            }
+            intent.getBooleanExtra(POUND, false) -> {
+                textValue.setText("£")
+                result *= 100
+            }
+            else -> {
+                textValue.setText("₽")
+            }
+        }
+        textOutput.setText(result.toString())
+    }
+    companion object {
+        fun newIntent(packageContext: Context, costtext: CharSequence, dollarChecked: Boolean, euroChecked: Boolean, poundChecked: Boolean): Intent {
+            return Intent(packageContext,
+                ResultActivity::class.java).apply {
+                putExtra(COST_TEXT, costtext)
+                putExtra(DOLLAR, dollarChecked)
+                putExtra(EURO, euroChecked)
+                putExtra(POUND, poundChecked)
+            }
         }
     }
 }

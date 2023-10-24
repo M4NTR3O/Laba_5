@@ -23,11 +23,11 @@ class MainActivity : AppCompatActivity() {
         poundButton = findViewById(R.id.radioPound)
         costText = findViewById(R.id.costText)
         okButton.setOnClickListener {
-            val intent = Intent(this, ResultActivity::class.java)
-            intent.putExtra("input_cost", costText.text)
-            intent.putExtra("dollar", dollarButton.isChecked)
-            intent.putExtra("euro", euroButton.isChecked)
-            intent.putExtra("pound", poundButton.isChecked)
+            val costtext = costText.text
+            val dollarChecked = dollarButton.isChecked
+            val euroChecked = euroButton.isChecked
+            val poundChecked = poundButton.isChecked
+            val intent = ResultActivity.newIntent(this@MainActivity, costtext, dollarChecked, euroChecked, poundChecked)
             startActivity(intent)
         }
     }
