@@ -13,6 +13,9 @@ class ResultActivity : AppCompatActivity() {
     private lateinit var textInput: TextView
     private lateinit var textOutput: TextView
     private lateinit var textValue: TextView
+
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main2)
