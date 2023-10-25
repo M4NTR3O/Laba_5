@@ -17,6 +17,7 @@ class ResultActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_result)
+
         textInput.text = intent.getStringExtra(COST_TEXT)
         var result: Double = intent.getStringExtra(COST_TEXT)!!.toDouble()
         when{
