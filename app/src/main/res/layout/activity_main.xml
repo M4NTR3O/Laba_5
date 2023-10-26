@@ -20,12 +20,14 @@
         android:id="@+id/costText"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
-        android:layout_marginStart="40dp"
+        android:layout_marginStart="44dp"
         android:ems="10"
         android:hint="Введите стоимость"
         android:inputType="text"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textCost"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textCost"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.279"
         tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
 
     <TextView
@@ -35,38 +37,44 @@
         android:layout_marginStart="84dp"
         android:layout_marginTop="68dp"
         android:text="Курс"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textCost" />
 
-    <RadioButton
-        android:id="@+id/radioDollar"
+    <RadioGroup
+        android:id="@+id/ValuteGroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="16dp"
-        android:text="$ 75 руб."
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textCurs" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textCurs"
+        app:layout_constraintTop_toBottomOf="@+id/costText">
 
-    <RadioButton
-        android:id="@+id/radioEuro"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="16dp"
-        android:text="€ 90 руб."
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioDollar" />
+        <RadioButton
+            android:id="@+id/radioDollar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="16dp"
+            android:checked="true"
+            android:text="$ 75 руб." />
 
-    <RadioButton
-        android:id="@+id/radioPound"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="16dp"
-        android:text="£ 100 руб."
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioEuro" />
+        <RadioButton
+            android:id="@+id/radioEuro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="16dp"
+            android:text="€ 90 руб." />
+
+        <RadioButton
+            android:id="@+id/radioPound"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="16dp"
+            android:text="£ 100 руб." />
+    </RadioGroup>
 
     <Button
         android:id="@+id/buttonOk"
