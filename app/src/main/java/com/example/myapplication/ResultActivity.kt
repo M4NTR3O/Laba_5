@@ -21,11 +21,13 @@ class ResultActivity : AppCompatActivity() {
         textOutput = findViewById(R.id.textOutput)
         textValue = findViewById(R.id.textValute)
         textInput.text = intent.getStringExtra(COST_TEXT)
+        var result = textInput.text.toString().toDouble()
         when{
-            intent.getBooleanExtra(DOLLAR, false) -> textValue.text = "$"
-            intent.getBooleanExtra(EURO, false) -> textValue.text = "€"
-            intent.getBooleanExtra(POUND, false) -> textValue.text = "£"
+            intent.getBooleanExtra(DOLLAR, false) -> {textValue.text = "$"; result *= 75}
+            intent.getBooleanExtra(EURO, false) -> {textValue.text = "€"; result *= 90}
+            intent.getBooleanExtra(POUND, false) -> {textValue.text = "£"; result *= 100}
         }
+        textOutput.text = String.format("%.2f", result)
     }
     companion object{
         fun newIntent(packageContext: Context, cost_text: String, isDollar: Boolean, isEuro: Boolean, isPound: Boolean): Intent{
