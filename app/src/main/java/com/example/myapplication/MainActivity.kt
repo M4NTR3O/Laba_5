@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
         costText = findViewById(R.id.costText)
         okButton.setOnClickListener {
             val cost_text = costText.text.toString()
-            val intent = ResultActivity.newIntent(this@MainActivity, cost_text)
+            val intent = ResultActivity.newIntent(this@MainActivity, cost_text, dollarButton.isChecked, euroButton.isChecked, poundButton.isChecked)
             startActivity(intent)
         }
     }

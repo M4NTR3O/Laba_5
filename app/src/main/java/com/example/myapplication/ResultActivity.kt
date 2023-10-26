@@ -4,10 +4,7 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import android.widget.RadioButton
 import android.widget.TextView
-import org.w3c.dom.Text
 
 private const val COST_TEXT = "input_cost"
 private const val DOLLAR = "dollar"
@@ -24,11 +21,19 @@ class ResultActivity : AppCompatActivity() {
         textOutput = findViewById(R.id.textOutput)
         textValue = findViewById(R.id.textValute)
         textInput.text = intent.getStringExtra(COST_TEXT)
+        when{
+            intent.getBooleanExtra(DOLLAR, false) -> textValue.text = "$"
+            intent.getBooleanExtra(EURO, false) -> textValue.text = "€"
+            intent.getBooleanExtra(POUND, false) -> textValue.text = "£"
+        }
     }
     companion object{
-        fun newIntent(packageContext: Context, cost_text: String): Intent{
+        fun newIntent(packageContext: Context, cost_text: String, isDollar: Boolean, isEuro: Boolean, isPound: Boolean): Intent{
             return Intent(packageContext, ResultActivity::class.java).apply {
                 putExtra(COST_TEXT, cost_text)
+                putExtra(DOLLAR, isDollar)
+                putExtra(EURO, isEuro)
+                putExtra(POUND, isPound)
             }
         }
     }
