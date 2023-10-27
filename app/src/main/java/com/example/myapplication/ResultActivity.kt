@@ -23,9 +23,9 @@ class ResultActivity : AppCompatActivity() {
         textInput.text = intent.getStringExtra(COST_TEXT)
         var result = textInput.text.toString().toDouble()
         when{
-            intent.getBooleanExtra(DOLLAR, false) -> {textValue.text = "$"; result *= 75}
-            intent.getBooleanExtra(EURO, false) -> {textValue.text = "€"; result *= 90}
-            intent.getBooleanExtra(POUND, false) -> {textValue.text = "£"; result *= 100}
+            intent.getBooleanExtra(DOLLAR, false) -> {textValue.text = "@string/dollar"; result *= 75}
+            intent.getBooleanExtra(EURO, false) -> {textValue.text = "@string/euro"; result *= 90}
+            intent.getBooleanExtra(POUND, false) -> {textValue.text = "@string/pound"; result *= 100}
         }
         textOutput.text = String.format("%.2f", result)
     }

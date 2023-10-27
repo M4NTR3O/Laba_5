@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="84dp"
         android:layout_marginTop="206dp"
-        android:text="Цена"
+        android:text="@string/cost"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -22,7 +22,7 @@
         android:layout_height="48dp"
         android:layout_marginStart="44dp"
         android:ems="10"
-        android:hint="Введите стоимость"
+        android:hint="@string/inputCost"
         android:inputType="text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textCost"
@@ -36,7 +36,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="84dp"
         android:layout_marginTop="68dp"
-        android:text="Курс"
+        android:text="@string/course"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textCost" />
@@ -57,7 +57,7 @@
             android:layout_marginStart="80dp"
             android:layout_marginTop="16dp"
             android:checked="true"
-            android:text="$ 75 руб." />
+            android:text="@string/dollarCourse" />
 
         <RadioButton
             android:id="@+id/radioEuro"
@@ -65,7 +65,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="80dp"
             android:layout_marginTop="16dp"
-            android:text="€ 90 руб." />
+            android:text="@string/euroCourse" />
 
         <RadioButton
             android:id="@+id/radioPound"
@@ -73,7 +73,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="80dp"
             android:layout_marginTop="16dp"
-            android:text="£ 100 руб." />
+            android:text="@string/poundCourse" />
     </RadioGroup>
 
     <Button
@@ -81,7 +81,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="48dp"
-        android:text="Ok"
+        android:text="@string/ok"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

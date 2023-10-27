@@ -1,14 +1,17 @@
 <resources>
     <string name="app_name">Валютный конвертер</string>
-    <string name="dollar"></string>
+    <string name="dollar">$</string>
     <string name="euro">€</string>
     <string name="pound">£</string>
     <string name="ruble">₽</string>
-    <string name="dollarCourse">75 ₽</string>
-    <string name="euroCourse">90 ₽</string>
-    <string name="poundCourse">100 ₽</string>
+    <string name="dollarCourse">$ 75 ₽</string>
+    <string name="euroCourse">€ 90 ₽</string>
+    <string name="poundCourse">£ 100 ₽</string>
     <string name="cost">На получение</string>
+    <string name="inputCost">Введите стоимость</string>
     <string name="course">Курс</string>
     <string name="inputMoney">Получено</string>
     <string name="outputMoney">Выдано</string>
+    <string name="ok">Ок</string>
+    <string name="none">none</string>
 </resources>
