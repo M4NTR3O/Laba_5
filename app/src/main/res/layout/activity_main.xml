@@ -10,24 +10,29 @@
         android:id="@+id/textCost"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="84dp"
-        android:layout_marginTop="206dp"
+        android:layout_marginTop="208dp"
         android:text="@string/cost"
+        app:layout_constraintBottom_toTopOf="@+id/buttonOk"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.262"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.012" />
 
     <EditText
         android:id="@+id/costText"
         android:layout_width="wrap_content"
-        android:layout_height="48dp"
-        android:layout_marginStart="44dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="0dp"
         android:ems="10"
         android:hint="@string/inputCost"
         android:inputType="text"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/textCost"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.279"
+        app:layout_constraintVertical_bias="0.295"
         tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
 
     <TextView
@@ -54,8 +59,8 @@
             android:id="@+id/radioDollar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="80dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="0dp"
             android:checked="true"
             android:text="@string/dollarCourse" />
 
@@ -63,16 +68,16 @@
             android:id="@+id/radioEuro"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="80dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="0dp"
             android:text="@string/euroCourse" />
 
         <RadioButton
             android:id="@+id/radioPound"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="80dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="0dp"
             android:text="@string/poundCourse" />
     </RadioGroup>
 
@@ -80,10 +85,10 @@
         android:id="@+id/buttonOk"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="48dp"
         android:text="@string/ok"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ValuteGroup" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
